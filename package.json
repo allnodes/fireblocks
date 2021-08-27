@@ -1,0 +1,45 @@
+{
+  "name": "@allnodes/fireblocks",
+  "private": true,
+  "license": "MIT",
+  "author": "Allnodes Inc. <support@allnodes.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/allnodes/fireblocks.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn install --force && yarn build",
+    "publish": "lerna publish",
+    "build": "lerna run build",
+    "lint": "lerna run lint --parallel",
+    "test": "lerna run test --parallel"
+  },
+  "devDependencies": {
+    "@types/node": "^14.17.12",
+    "dotenv": "^10.0.0",
+    "husky": "^7.0.1",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.2",
+    "prettier-plugin-organize-imports": "^2.3.3",
+    "tiny-invariant": "^1.1.0",
+    "ts-node": "^10.2.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna run lint --parallel"
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
+  }
+}

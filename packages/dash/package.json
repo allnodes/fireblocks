@@ -1,0 +1,39 @@
+{
+  "name": "@allnodes/fireblocks-dash",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Allnodes Inc. <support@allnodes.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/allnodes/fireblocks.git",
+    "directory": "packages/dash"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "module": "dist/dash.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
+  },
+  "peerDependencies": {
+    "fireblocks-sdk": "^1.6.2"
+  },
+  "dependencies": {
+    "bitcore-lib": "^8.25.10",
+    "tiny-invariant": "^1.1.0"
+  },
+  "devDependencies": {
+    "@allnodes/fireblocks-core": "^1.0.0",
+    "fireblocks-sdk": "^1.6.2"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@allnodes/fireblocks-ada": ["packages/ada"],
+      "@allnodes/fireblocks-ada/*": ["packages/ada/*"],
+      "@allnodes/fireblocks-core": ["packages/core"],
+      "@allnodes/fireblocks-core/*": ["packages/core/*"],
+      "@allnodes/fireblocks-dash": ["packages/dash"],
+      "@allnodes/fireblocks-dash/*": ["packages/dash/*"],
+      "@allnodes/fireblocks-matic": ["packages/matic"],
+      "@allnodes/fireblocks-matic/*": ["packages/matic/*"]
+    }
+  }
+}

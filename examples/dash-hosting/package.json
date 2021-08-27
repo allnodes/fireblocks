@@ -1,0 +1,20 @@
+{
+  "name": "dash-hosting",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "ts-node src",
+    "start:dev": "..\\..\\node_modules\\.bin\\ts-node src"
+  },
+  "dependencies": {
+    "@allnodes/fireblocks-core": "^1.0.0",
+    "@allnodes/fireblocks-dash": "^1.0.0",
+    "fireblocks-sdk": "^1.6.2"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "ts-node": "^10.2.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5"
+  }
+}

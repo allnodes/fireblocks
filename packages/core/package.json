@@ -1,0 +1,32 @@
+{
+  "name": "@allnodes/fireblocks-core",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Allnodes Inc. <support@allnodes.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/allnodes/fireblocks.git",
+    "directory": "packages/core"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "module": "dist/core.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
+  },
+  "dependencies": {
+    "got": "^11.8.2",
+    "tiny-invariant": "^1.1.0"
+  }
+}
