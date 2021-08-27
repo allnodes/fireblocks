@@ -35,6 +35,7 @@
     "web3": "^1.5.1"
   },
   "devDependencies": {
+    "@allnodes/fireblocks-core": "^1.0.0",
     "fireblocks-sdk": "^1.6.2"
   }
 }
