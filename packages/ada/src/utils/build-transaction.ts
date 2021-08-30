@@ -13,6 +13,7 @@ interface Payload {
   inputAddress: Cardano.BaseAddress;
   outputAddress: Cardano.BaseAddress;
   shouldRegisterStakeAddress: boolean;
+  poolHash: string;
 }
 
 /**
@@ -44,7 +45,7 @@ export function buildTransaction(payload: Payload): Response {
     certificates.add(stakeRegistrationCertificate);
   }
 
-  const poolHash = Cardano.Ed25519KeyHash.from_bytes(Constants.POOL_HASH);
+  const poolHash = Cardano.Ed25519KeyHash.from_bytes(Buffer.from(payload.poolHash, 'hex'));
   const stakeDelegation = Cardano.StakeDelegation.new(payload.stakeCredential, poolHash);
   const stakeDelegationCertificate = Cardano.Certificate.new_stake_delegation(stakeDelegation);
 

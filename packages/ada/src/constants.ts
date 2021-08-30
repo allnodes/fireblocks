@@ -1,9 +1,5 @@
 import * as Cardano from '@emurgo/cardano-serialization-lib-nodejs';
 
-/**
- *
- */
-export const POOL_HASH = Buffer.from(`6f223af7c6069f7428cf7605efba84ec410f5476550f83dbb3096238`, 'hex');
 
 /**
  *

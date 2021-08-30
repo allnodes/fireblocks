@@ -5,6 +5,8 @@ import type { BroadcastTransactionDto } from './broadcast-transaction';
 import { broadcastTransaction } from './broadcast-transaction';
 import type { AddressInfoDto, AddressInfoEntity } from './fetch-address-info';
 import { fetchAddressInfo } from './fetch-address-info';
+import type { StakePoolDto, StakePoolEntity } from './fetch-stake-pool';
+import { fetchStakePool } from './fetch-stake-pool';
 import type { Tip } from './fetch-tip';
 import { fetchTip } from './fetch-tip';
 
@@ -56,6 +58,18 @@ export class AllnodesApiADA {
   async fetchTip(): Promise<Tip> {
     try {
       return await fetchTip({ got: this.got });
+    } catch (err) {
+      throw parseHttpError(err);
+    }
+  }
+
+  /**
+   *
+   * @param payload
+   */
+  async fetchStakePool(payload: StakePoolDto): Promise<StakePoolEntity> {
+    try {
+      return await fetchStakePool({ ...payload, got: this.got });
     } catch (err) {
       throw parseHttpError(err);
     }

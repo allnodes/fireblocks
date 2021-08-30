@@ -2,6 +2,7 @@ import { Assets } from '@allnodes/fireblocks-core';
 import { FireblocksSDK } from 'fireblocks-sdk';
 import invariant from 'tiny-invariant';
 import { AllnodesApiADA } from '../api';
+import type { StakePoolEntity } from '../api/fetch-stake-pool';
 import { AllnodesSignerADA } from '../signer';
 import type { Addresses } from '../types';
 import { utils } from '../utils';
@@ -36,7 +37,7 @@ export class AllnodesStakingADA {
    *
    * @param payload
    */
-  async stake(payload?: { addressIndex?: number }): Promise<void> {
+  async stake(payload: { stakePool: StakePoolEntity; addressIndex?: number }): Promise<void> {
     const addresses = await this.fetchAddresses({ addressIndex: payload?.addressIndex });
     const { baseAddress, stakeAddress } = addresses;
 
@@ -59,6 +60,7 @@ export class AllnodesStakingADA {
       inputAddress: baseAddress.address,
       outputAddress: baseAddress.address,
       shouldRegisterStakeAddress: true,
+      poolHash: payload.stakePool.hash
     });
 
     const inputSignature = await this.signerADA.signMessage({
