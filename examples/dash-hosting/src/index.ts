@@ -34,7 +34,7 @@ async function main(): Promise<void> {
   for (const addressIndex in depositAddresses) {
     const { address } = depositAddresses[addressIndex];
 
-    if (!ADDRESSES.includes(address)) {
+    if (!ADDRESSES.split(',').includes(address)) {
       console.log(`Skipping address = "${address}"`);
 
       continue;
