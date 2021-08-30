@@ -65,11 +65,13 @@ async function main(): Promise<void> {
           const hostingState = await apiHosting.fetchHostingState(item);
 
           if (hostingState.isAlreadyHostedOnAllnodes && hostingState.isActivated) {
-            throw new Error(`Node already hosted on Allnodes`);
+            throw new Error(`Node is already hosted and activated on Allnodes`);
           }
 
-          if (hostingState.isAlreadyHosted) {
-            throw new Error(`Node already hosted somewhere`);
+          if (hostingState.isAlreadyHostedOnAllnodes) {
+            console.log(`Node is already hosted on Allnodes, but not activated yet`);
+          } else if (hostingState.isAlreadyHosted) {
+            console.log(`Node is already hosted somewhere else, trying to re-register ProTx record`);
           }
 
           const node = hostingState.isAlreadyHostedOnAllnodes
@@ -79,7 +81,7 @@ async function main(): Promise<void> {
                 });
 
                 if (node == null) {
-                  throw new Error(`Node not found`);
+                  throw new Error(`Hosted node not found`);
                 }
 
                 return node;
@@ -89,7 +91,7 @@ async function main(): Promise<void> {
           await hostingDASH.activateNode({ node, addressIndex: parseInt(addressIndex), payeeAddress: PAYEE_ADDRESS });
         } catch (err: any) {
           console.log(
-            `Failed to host node: UTXO hash = "${item.hash}", UTXO index = "${item.index}", message = "${err.message}"`
+            `Failed to host/activate node: UTXO hash = "${item.hash}", UTXO index = "${item.index}", message = "${err.message}"`
           );
         }
       }

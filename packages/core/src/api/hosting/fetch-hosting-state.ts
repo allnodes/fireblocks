@@ -15,6 +15,7 @@ export interface HostingStateEntity {
   isAlreadyHosted: boolean;
   isAlreadyHostedOnAllnodes: boolean;
   isActivated: boolean;
+  isBanned: boolean;
 }
 
 /**
