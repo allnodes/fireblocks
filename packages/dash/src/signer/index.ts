@@ -20,9 +20,11 @@ export class AllnodesSignerDASH {
    *
    * @param payload
    */
-  async signMessage(payload: { message: string }): Promise<string> {
+  async signMessage(payload: { message: string; addressIndex: number }): Promise<string> {
     const rawMessageData: RawMessageData = {
-      messages: [{ content: this.makeMessageHash({ message: payload.message }) }],
+      messages: [
+        { content: this.makeMessageHash({ message: payload.message }), bip44addressIndex: payload.addressIndex },
+      ],
     };
 
     const transactionArguments: TransactionArguments = {

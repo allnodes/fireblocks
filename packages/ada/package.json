@@ -1,6 +1,6 @@
 {
   "name": "@allnodes/fireblocks-ada",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "Allnodes Inc. <support@allnodes.com>",
   "repository": {
@@ -33,7 +33,7 @@
     "tiny-invariant": "^1.1.0"
   },
   "devDependencies": {
-    "@allnodes/fireblocks-core": "^1.0.0",
+    "@allnodes/fireblocks-core": "^1.0.2",
     "fireblocks-sdk": "^1.6.2"
   }
 }

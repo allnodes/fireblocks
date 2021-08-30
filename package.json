@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn install --force && yarn build",
-    "publish": "lerna publish",
+    "publish": "lerna publish from-package",
     "build": "lerna run build",
     "lint": "lerna run lint --parallel",
     "test": "lerna run test --parallel"
@@ -24,7 +24,6 @@
     "lerna": "^4.0.0",
     "prettier": "^2.3.2",
     "prettier-plugin-organize-imports": "^2.3.3",
-    "tiny-invariant": "^1.1.0",
     "ts-node": "^10.2.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",

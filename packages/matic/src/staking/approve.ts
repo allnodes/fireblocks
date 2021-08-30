@@ -1,6 +1,6 @@
 import { Assets } from '@allnodes/fireblocks-core';
 import { submitTransaction } from './submit-transaction';
-import type { WithApi, WithFireblocks } from './types';
+import type { WithApi, WithBridge } from './types';
 
 /**
  *
@@ -13,7 +13,7 @@ export interface ApproveDto {
  *
  * @param payload
  */
-export async function approve(payload: WithApi<WithFireblocks<ApproveDto>>): Promise<void> {
+export async function approve(payload: WithApi<WithBridge<ApproveDto>>): Promise<void> {
   const { apiStaking, bridge, address } = payload;
   const transactionParams = await apiStaking.approve({ address, asset: Assets.MATIC });
 
