@@ -32,7 +32,6 @@ export async function submitTransaction(payload: Payload): Promise<void> {
   const hash = await payload.bridge.waitForTxHash(transactionId);
 
   if (__DEV__) {
-    console.log(`Transaction ID = "${hash}"`);
-    console.log('Successfully staked MATIC');
+    console.log(`Transaction = "https://etherscan.io/tx/${hash}"`);
   }
 }

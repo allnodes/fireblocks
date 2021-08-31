@@ -3,7 +3,6 @@ import { Web3Bridge } from 'fireblocks-defi-sdk';
 import { FireblocksSDK } from 'fireblocks-sdk';
 import type { ApproveDto } from './approve';
 import { approve } from './approve';
-import { approveAndStake } from './approve-and-stake';
 import { makeBridge } from './make-bridge';
 import type { StakeDto } from './stake';
 import { stake } from './stake';
@@ -49,13 +48,5 @@ export class AllnodesStakingMATIC {
    */
   async stake(payload: StakeDto): Promise<void> {
     await stake({ ...payload, apiStaking: this.apiStaking, bridge: this.bridge });
-  }
-
-  /**
-   *
-   * @param payload
-   */
-  async approveAndStake(payload: StakeDto): Promise<void> {
-    await approveAndStake({ ...payload, apiStaking: this.apiStaking, bridge: this.bridge });
   }
 }

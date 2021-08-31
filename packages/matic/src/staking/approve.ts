@@ -17,5 +17,17 @@ export async function approve(payload: WithApi<WithBridge<ApproveDto>>): Promise
   const { apiStaking, bridge, address } = payload;
   const transactionParams = await apiStaking.approve({ address, asset: Assets.MATIC });
 
+  if (__DEV__) {
+    const gasPrice = transactionParams.gasPrice / 1e9;
+    const { gasLimit } = transactionParams;
+    const maxFee = Number(gasPrice * gasLimit).toFixed(8);
+
+    console.log(`Approving MATIC token: max fee = "${Number(maxFee)} ETH"`);
+  }
+
   await submitTransaction({ bridge, address, transactionParams });
+
+  if (__DEV__) {
+    console.log(`Successfully approved MATIC token`);
+  }
 }
