@@ -26,7 +26,9 @@
       "@allnodes/fireblocks-matic": ["packages/matic"],
       "@allnodes/fireblocks-matic/*": ["packages/matic/*"],
       "@allnodes/fireblocks-grt": ["packages/grt"],
-      "@allnodes/fireblocks-grt/*": ["packages/grt/*"]
+      "@allnodes/fireblocks-grt/*": ["packages/grt/*"],
+      "@allnodes/fireblocks-shib": ["packages/shib"],
+      "@allnodes/fireblocks-shib/*": ["packages/shib/*"]
     }
   }
 }
