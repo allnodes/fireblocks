@@ -1,0 +1,41 @@
+{
+  "name": "@allnodes/fireblocks-grt",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Allnodes Inc. <support@allnodes.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/allnodes/fireblocks.git",
+    "directory": "packages/grt"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "module": "dist/grt.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
+  },
+  "peerDependencies": {
+    "fireblocks-sdk": "^1.6.2"
+  },
+  "dependencies": {
+    "ethereumjs-util": "^7.1.0",
+    "fireblocks-defi-sdk": "^1.0.2",
+    "tiny-invariant": "^1.1.0",
+    "web3": "^1.5.1"
+  },
+  "devDependencies": {
+    "@allnodes/fireblocks-core": "^1.0.4",
+    "fireblocks-sdk": "^1.6.2"
+  }
+}

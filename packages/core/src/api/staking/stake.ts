@@ -8,6 +8,7 @@ export interface StakeDto {
   asset: Assets;
   address: string;
   amount: string | number;
+  toAddress?: string;
 }
 
 /**
@@ -22,6 +23,7 @@ export async function stake(payload: WithGot<StakeDto>): Promise<EthereumTransac
         action: 'stake',
         address: payload.address,
         amount: `${payload.amount}`,
+        toAddress: payload.toAddress,
       },
     })
     .json<EthereumTransactionParams>();

@@ -24,7 +24,9 @@
       "@allnodes/fireblocks-dash": ["packages/dash"],
       "@allnodes/fireblocks-dash/*": ["packages/dash/*"],
       "@allnodes/fireblocks-matic": ["packages/matic"],
-      "@allnodes/fireblocks-matic/*": ["packages/matic/*"]
+      "@allnodes/fireblocks-matic/*": ["packages/matic/*"],
+      "@allnodes/fireblocks-grt": ["packages/grt"],
+      "@allnodes/fireblocks-grt/*": ["packages/grt/*"]
     }
   }
 }
